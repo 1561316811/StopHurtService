@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<!-- 
+
+	<package name="ttt" namespace="/" extends="struts-default"> <action 
+		name="UploadSubmit" class="action.MyUpAction"> <interceptor-ref name ="defaultStack" 
+		/> <interceptor-ref name ="fileUpload"> <param name ="allowedTypes"> image/bmp,image/png,image/gif,image/jpg 
+		</param> <param name="maximumSize">40480</param> </interceptor-ref> <result 
+		name = "input"> /upImages.jsp </result> <result name="success" type = "redirect"> 
+		http://www.baidu.com </result> <result name="error" type = "redirect"> http://www.baidu.com 
+		</result> <result name="show"> /showPicture.jsp </result> </action> </package> 
+		 -->
+		
+		<package name="administrator" namespace="/admin" extends="json-default"> 
+	<!-- 	<action name="roomManage" class="administratorAction"> 
+		<result> /admin/roomManage.jsp 
+		</result> 
+		</action>  -->
+		<action name="logIn" class="administratorAction" method="logIn"> 
+		<result type="json" name="login"> <param name="root">result</param> 
+		</result> 
+		<result type="json" name="success"> 
+		<param name="root">result</param> 
+		</result> 
+		<result type="json" name="main">
+		 <param name="root">result</param> 
+		 </result> 
+		</action> <action name="*" class="administratorAction" method="{1}">
+		 <result 
+		type="json"> 
+		<param name="root">result</param> 
+		</result> 
+		</action> 
+		</package>
+
+
+	<package name="student" namespace="/student" extends="json-default">
+
+		<!-- <action name="roomManage" class="studentAction"> <result> /admin/roomManage.jsp 
+			</result> </action> -->
+
+		<action name="logIn" class="studentAction" method="logIn">
+
+			<result type="json" name="login">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="main">
+				<param name="root">result</param>
+			</result>
+
+		</action>
+
+
+		<action name="uploadAvatar" class="studentAction" method="uploadAvatar">
+
+			<interceptor-ref name="defaultStack" />
+			<interceptor-ref name="fileUpload">
+				<param name="allowedTypes">
+					image/bmp,image/png,image/gif,image/jpg
+				</param>
+				<!-- 10M -->
+				<param name="maximumSize">10485760</param>
+			</interceptor-ref>
+
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+			
+		</action>
+		
+		<action name="viewAvatar" class="studentAction" method="viewAvatar">
+			
+		</action>
+
+		<action name="*" class="studentAction" method="{1}">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+
+	</package>
+
+	<package name="guardian" namespace="/guardian" extends="json-default">
+
+		<!-- <action name="roomManage" class="guardianAction"> <result> /admin/roomManage.jsp 
+			</result> </action> -->
+
+		<action name="logIn" class="guardianAction" method="logIn">
+
+			<result type="json" name="login">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="main">
+				<param name="root">result</param>
+			</result>
+
+		</action>
+
+		<action name="*" class="guardianAction" method="{1}">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+
+	</package>
+
+
+	<package name="rescuer" namespace="/rescuer" extends="json-default">
+
+		<!-- <action name="roomManage" class="rescuerAction"> <result> /admin/roomManage.jsp 
+			</result> </action> -->
+
+		<action name="logIn" class="rescuerAction" method="logIn">
+
+			<result type="json" name="login">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="success">
+				<param name="root">result</param>
+			</result>
+			<result type="json" name="main">
+				<param name="root">result</param>
+			</result>
+
+		</action>
+
+		<action name="*" class="rescuerAction" method="{1}">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+
+	</package>
+
+	<package name="department" namespace="/department" extends="json-default">
+
+		<!-- <action name="roomManage" class="departmentAction"> <result> /admin/roomManage.jsp 
+			</result> </action> -->
+
+		<action name="*" class="departmentAction" method="{1}">
+			<result type="json">
+				<param name="root">result</param>
+			</result>
+		</action>
+
+	</package>
+
+
+</struts>

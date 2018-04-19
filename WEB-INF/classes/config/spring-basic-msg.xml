@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/tx
+		   http://www.springframework.org/schema/tx/spring-tx-4.1.xsd
+           http://www.springframework.org/schema/aop
+           http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+
+	<!-- <bean class="com.stophurt.service.basicdata.StatusType">
+		<property name="mapData">
+			<map>
+				<entry key="0" value-ref="WAITING_RECEIVE"/>
+				<entry key="1" value-ref="EXECUTING"/>
+				<entry key="2" value-ref="SUCCESS"/>
+				<entry key="3" value-ref="FAILURE"/>
+			</map>
+		</property>
+	
+	</bean>
+	
+	<bean id="WAITING_RECEIVE" class="com.stophurt.entity.Status">
+		<property name="id" value="0"></property>
+		<property name="name" value="待接收"></property>
+	</bean>
+	
+	<bean id="EXECUTING" class="com.stophurt.entity.Status">
+		<property name="id" value="1"></property>
+		<property name="name" value="执行中"></property>
+	</bean>
+	
+	<bean id="SUCCESS" class="com.stophurt.entity.Status">
+		<property name="id" value="2"></property>
+		<property name="name" value="成功"></property>
+	</bean>
+	
+	<bean id="FAILURE" class="com.stophurt.entity.Status">
+		<property name="id" value="3"></property>
+		<property name="name" value="失败"></property>
+	</bean> -->
+
+</beans>
